@@ -54,6 +54,8 @@ SET "EchoBrightWhite=%_psc% write-host -back Black -fore White"
 CHCP 65001 >nul
 TITLE Office 365 설치
 
+ECHO Microsoft Office 365 설치 프로세스입니다.
+ECHO 설치방법을 선택해주세요.
 :_start
 CHOICE /c 123 /n /m "[1] 권장 설치 [2] 모두 설치 [3] 사용자 지정 설치"
 CLS
