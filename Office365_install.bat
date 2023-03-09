@@ -18,7 +18,9 @@ IF %errorlevel% neq 0 (
 	EXIT /B
 
 :gotAdmin
-	IF EXIST "%temp%\getadmin.vbs" ( del "%temp%\getadmin.vbs" )
+	IF EXIST "%temp%\getadmin.vbs" (
+		DEL "%temp%\getadmin.vbs"
+	)
 	PUSHD "%CD%"
 	CD /D "%~dp0"
 
@@ -368,7 +370,7 @@ ECHO ^</Configuration^>>>configuration.xml
 IF NOT EXIST temp\ (
 	MKDIR temp >nul 2>&1
 )
-MOVE /y configuration.xml temp 2> nul
+MOVE /y configuration.xml temp >nul 2>%1
 
 CD TEMP >nul 2>&1
 ECHO 설치 파일 다운로드 중...
