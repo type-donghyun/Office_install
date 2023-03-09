@@ -365,7 +365,7 @@ ECHO   ^<Updates Enabled="TRUE" /^>>>configuration.xml
 ECHO   ^<RemoveMSI /^>>>configuration.xml
 ECHO ^</Configuration^>>>configuration.xml
 
-IF EXIST temp\ (
+IF NOT EXIST temp\ (
 	MKDIR temp >nul 2>&1
 )
 MOVE /y configuration.xml temp 2> nul
