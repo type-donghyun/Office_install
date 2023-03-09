@@ -367,7 +367,6 @@ ECHO   ^<Updates Enabled="TRUE" /^>>>configuration.xml
 ECHO   ^<RemoveMSI /^>>>configuration.xml
 ECHO ^</Configuration^>>>configuration.xml
 
-CHCP 949
 MKDIR temp >nul 2>&1
 MOVE /y configuration.xml temp >nul 2>&1
 
