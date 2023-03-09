@@ -6,6 +6,16 @@ IF %errorlevel% neq 0 (
 	GOTO UACPrompt
 ) ELSE (
 	GOTO gotAdmin
+)@ECHO OFF
+::_____________________________________________________________________________________________________________________________________________________________
+:: 관리자 권한 요청
+
+>nul 2>&1 "%SYSTEMROOT%\system32\cacls.exe" "%SYSTEMROOT%\system32\config\system"
+
+IF %errorlevel% neq 0 (
+	GOTO UACPrompt
+) ELSE (
+	GOTO gotAdmin
 )
 
 :UACPrompt
@@ -19,9 +29,10 @@ IF %errorlevel% neq 0 (
 	IF EXIST "%temp%\getadmin.vbs" ( del "%temp%\getadmin.vbs" )
 	PUSHD "%CD%"
 	CD /D "%~dp0"
-::====================================================================================================
 
-::================================================================================ECHO 색상 설정
+::_____________________________________________________________________________________________________________________________________________________________
+:: ECHO 색상 설정
+
 SET _elev=
 IF /i "%~1"=="-el" SET _elev=1
 FOR /f "tokens=6 delims=[]. " %%G in ('ver') do set winbuild=%%G
@@ -43,11 +54,12 @@ SET "EchoLightRed=%_psc% write-host -back Black -fore Red"
 SET "EchoLightPurple=%_psc% write-host -back Black -fore Magenta"
 SET "EchoLightYellow=%_psc% write-host -back Black -fore Yellow"
 SET "EchoBrightWhite=%_psc% write-host -back Black -fore White"
-SET "ErrLine=echo: & %EchoRed% ==== ERROR ==== &echo:"
-::====================================================================================================
+
+::_____________________________________________________________________________________________________________________________________________________________
 
 CHCP 65001 > nul
 TITLE Office 365 설치
+
 :_start
 CHOICE /c 123 /n /m "[1] 권장 설치 [2] 모두 설치 [3] 사용자 지정 설치"
 CLS
