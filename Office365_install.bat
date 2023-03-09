@@ -365,10 +365,10 @@ ECHO   ^<Updates Enabled="TRUE" /^>>>configuration.xml
 ECHO   ^<RemoveMSI /^>>>configuration.xml
 ECHO ^</Configuration^>>>configuration.xml
 
-MKDIR temp 2> nul
+MKDIR temp >nul 2>&1
 MOVE /y configuration.xml temp 2> nul
 
-CD TEMP 2> nul
+CD TEMP >nul 2>&1
 ECHO 설치 파일 다운로드 중...
 setup.exe /download configuration.xml
 
