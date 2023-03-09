@@ -51,7 +51,7 @@ SET "EchoBrightWhite=%_psc% write-host -back Black -fore White"
 
 ::_____________________________________________________________________________________________________________________________________________________________
 
-CHCP 65001 > nul
+CHCP 65001 >nul
 TITLE Office 365 설치
 
 :_start
@@ -306,7 +306,7 @@ IF %errorlevel% equ 1 (
 )
 
 :_configuration
-DEL data\configuration.xml2>nul
+DEL data\configuration.xml2 >nul 2>&1
 
 ECHO ^<Configuration ID="2a0cb094-969c-4188-beb4-fa406759387e"^>>>configuration.xml
 ECHO   ^<Add OfficeClientEdition="64" Channel="Current"^>>>configuration.xml
@@ -367,15 +367,11 @@ ECHO   ^<Updates Enabled="TRUE" /^>>>configuration.xml
 ECHO   ^<RemoveMSI /^>>>configuration.xml
 ECHO ^</Configuration^>>>configuration.xml
 
-PAUSE
-
-MOVE /y configuration.xml temp >nul 2>&1
-
-PAUSE
+IF NOT EXIST temp (
+	MOVE /y configuration.xml temp >nul 2>&1
+)
 
 CD TEMP >nul 2>&1
-
-PAUSE
 
 ECHO 설치 파일 다운로드 중...
 setup.exe /download configuration.xml
