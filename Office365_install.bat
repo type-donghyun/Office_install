@@ -368,8 +368,10 @@ ECHO   ^<RemoveMSI /^>>>configuration.xml
 ECHO ^</Configuration^>>>configuration.xml
 
 IF NOT EXIST temp (
-	MOVE /y configuration.xml temp >nul 2>&1
+	MKDIR temp >nul
 )
+
+MOVE /y configuration.xml temp >nul 2>&1
 
 CD TEMP >nul 2>&1
 
