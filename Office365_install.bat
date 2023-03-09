@@ -367,9 +367,16 @@ ECHO   ^<Updates Enabled="TRUE" /^>>>configuration.xml
 ECHO   ^<RemoveMSI /^>>>configuration.xml
 ECHO ^</Configuration^>>>configuration.xml
 
+PAUSE
+
 MOVE /y configuration.xml temp >nul 2>&1
 
+PAUSE
+
 CD TEMP >nul 2>&1
+
+PAUSE
+
 ECHO 설치 파일 다운로드 중...
 setup.exe /download configuration.xml
 
