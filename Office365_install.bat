@@ -200,75 +200,75 @@ CLS
 
 :_check
 IF %Access% equ include (
-	%echogreen% Access 포함
+	ECHO ● Access 포함
 ) ELSE IF %Access% equ exclude (
-	%echoGray% Access 제외
+	ECHO ○ Access 제외
 )
 
 IF %Excel% equ include (
-	%echogreen% Excel 포함
+	ECHO ● Excel 포함
 ) ELSE IF %Excel% equ exclude (
-	%echoGray% Excel 제외
+	ECHO ○ Excel 제외
 )
 
 IF %Groove% equ include (
-	%echogreen% Groove 포함
+	ECHO ● Groove 포함
 ) ELSE IF %Groove% equ exclude (
-	%echoGray% Groove 제외
+	ECHO ○ Groove 제외
 )
 
 IF %Lync% equ include (
-	%echogreen% Lync 포함
+	ECHO ● Lync 포함
 ) ELSE IF %Lync% equ exclude (
-	%echoGray% Lync 제외
+	ECHO ○ Lync 제외
 )
 
 IF %OneDrive% equ include (
-	%echogreen% OneDrive 포함
+	ECHO ● OneDrive 포함
 ) ELSE IF %OneDrive% equ exclude (
-	%echoGray% OneDrive 제외
+	ECHO ○ OneDrive 제외
 )
 
 IF %OneNote% equ include (
-	%echogreen% OneNote 포함
+	ECHO ● OneNote 포함
 ) ELSE IF %OneNote% equ exclude (
-	%echoGray% OneNote 제외
+	ECHO ○ OneNote 제외
 )
 
 IF %Outlook% equ include (
-	%echogreen% Outlook 포함
+	ECHO ● Outlook 포함
 ) ELSE IF %Outlook% equ exclude (
-	%echoGray% Outlook 제외
+	ECHO ○ Outlook 제외
 )
 
 IF %PowerPoint% equ include (
-	%echogreen% PowerPoint 포함
+	ECHO ● PowerPoint 포함
 ) ELSE IF %PowerPoint% equ exclude (
-	%echoGray% PowerPoint 제외
+	ECHO ○ PowerPoint 제외
 )
 
 IF %Publisher% equ include (
-	%echogreen% Publisher 포함
+	ECHO ● Publisher 포함
 ) ELSE IF %Publisher% equ exclude (
-	%echoGray% Publisher 제외
+	ECHO ○ Publisher 제외
 )
 
 IF %Teams% equ include (
-	%echogreen% Teams 포함
+	ECHO ● Teams 포함
 ) ELSE IF %Teams% equ exclude (
-	%echoGray% Teams 제외
+	ECHO ○ Teams 제외
 )
 
 IF %Word% equ include (
-	%echogreen% Word 포함
+	ECHO ● Word 포함
 ) ELSE IF %Word% equ exclude (
-	%echoGray% Word 제외
+	ECHO ○ Word 제외
 )
 
 IF %Bing% equ include (
-	%echogreen% Bing 포함
+	ECHO ● Bing 포함
 ) ELSE IF %Bing% equ exclude (
-	%echoGray% Bing 제외
+	ECHO ○ Bing 제외
 )
 
 IF %mode% equ recommendedinstall (
