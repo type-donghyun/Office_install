@@ -25,31 +25,6 @@ IF %errorlevel% neq 0 (
 	CD /D "%~dp0"
 
 ::_____________________________________________________________________________________________________________________________________________________________
-:: ECHO 색상 설정
-
-SET _elev=
-IF /i "%~1"=="-el" SET _elev=1
-FOR /f "tokens=6 delims=[]. " %%G in ('ver') do set winbuild=%%G
-SET "_null=1>nul 2>nul"
-SET "_psc=powershell"
-SET "EchoBlack=%_psc% write-host -back DarkGray -fore Black"
-SET "EchoBlue=%_psc% write-host -back Black -fore DarkBlue"
-SET "EchoGreen=%_psc% write-host -back Black -fore Darkgreen"
-SET "EchoCyan=%_psc% write-host -back Black -fore DarkCyan"
-SET "EchoRed=%_psc% write-host -back Black -fore DarkRed"
-SET "EchoPurple=%_psc% write-host -back Black -fore DarkMagenta"
-SET "EchoYellow=%_psc% write-host -back Black -fore DarkYellow"
-SET "EchoWhite=%_psc% write-host -back Black -fore Gray"
-SET "EchoGray=%_psc% write-host -back Black -fore DarkGray"
-SET "EchoLightBlue=%_psc% write-host -back Black -fore Blue"
-SET "EchoLightGreen=%_psc% write-host -back Black -fore Green"
-SET "EchoLightCyan=%_psc% write-host -back Black -fore Cyan"
-SET "EchoLightRed=%_psc% write-host -back Black -fore Red"
-SET "EchoLightPurple=%_psc% write-host -back Black -fore Magenta"
-SET "EchoLightYellow=%_psc% write-host -back Black -fore Yellow"
-SET "EchoBrightWhite=%_psc% write-host -back Black -fore White"
-
-::_____________________________________________________________________________________________________________________________________________________________
 
 CHCP 65001 >nul
 TITLE Office 365 설치
@@ -58,7 +33,7 @@ ECHO Microsoft Office 365 설치 프로세스입니다.
 ECHO 설치방법을 선택해주세요.
 ECHO.
 :_start
-CHOICE /c 123 /n /m "[1] 권장 설치 [2] 모두 설치 [3] 사용자 지정 설치"
+CHOICE /c 123 /n /m "[1] 권장 설치 [2] 모두 설치 [3] 사용자 지정 설치 [4] 종료"
 CLS
 IF %errorlevel% equ 1 (
 	SET mode=recommendedinstall
@@ -69,6 +44,8 @@ IF %errorlevel% equ 1 (
 ) ELSE IF %errorlevel% equ 3 (
 	SET mode=custominstall
 	GOTO _custominstall
+) ELSE IF %errorlevel% equ 4 (
+	EXIT
 )
 
 :_recommendedinstall
