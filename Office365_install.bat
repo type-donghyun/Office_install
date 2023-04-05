@@ -33,7 +33,7 @@ ECHO Microsoft Office 365 설치 프로세스입니다.
 ECHO 설치방법을 선택해주세요.
 ECHO.
 :_start
-CHOICE /c 123 /n /m "[1] 권장 설치 [2] 모두 설치 [3] 사용자 지정 설치 [4] 종료"
+CHOICE /c 123 /n /m "[1] 권장 설치 [2] 모두 설치 [3] 사용자 지정 설치 [0] 종료"
 CLS
 IF %errorlevel% equ 1 (
 	SET mode=recommendedinstall
@@ -44,7 +44,7 @@ IF %errorlevel% equ 1 (
 ) ELSE IF %errorlevel% equ 3 (
 	SET mode=custominstall
 	GOTO _custominstall
-) ELSE IF %errorlevel% equ 4 (
+) ELSE IF %errorlevel% equ 0 (
 	EXIT
 )
 
